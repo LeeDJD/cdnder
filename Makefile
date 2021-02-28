@@ -1,19 +1,19 @@
--PHONY = _make
+PHONY = _make
 _make: dep build bweb
 
-.PHONY: dep
+PHONY += dep
 dep:
 	cd $(CURDIR)/web && yarn install
 
-.PHONY: build
+PHONY += build
 build:
-	go build -v -o @a $(CURDIR)/cmd/cdnder
+	echo 'Needs implementation'
 
-.PHONY: run
+PHONY += run
 run:
-	go run -v $(CURDIR)/cmd/cdnder
+	echo 'Needs implementation'
 
-.PHONY: bweb
+PHONY += bweb
 bweb:
 	cd $(CURDIR)/web && yarn run build
 	mkdir -p $(CURDIR)/target/web
